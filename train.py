@@ -55,3 +55,5 @@ for epoch in range(epochs):
         
         
 
+torch.save(model.state_dict(), "model.pth")
+print("Model saved as model.pth")
