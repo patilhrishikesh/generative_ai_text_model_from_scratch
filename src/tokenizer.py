@@ -1,12 +1,9 @@
 def create_vocab(text):
-     # creates character level vocabulary mappings.
-    chars = sorted(list(text))
-     
-    char_to_idx = {}
-    idx_to_char = {}
-     
-    for idx, ch in enumerate(chars):
-         char_to_idx[ch] = idx
-         idx_to_char[idx] = ch
-         
+    # Get unique characters
+    chars = sorted(set(text))
+
+    # Proper sequential indexing
+    char_to_idx = {ch: idx for idx, ch in enumerate(chars)}
+    idx_to_char = {idx: ch for ch, idx in char_to_idx.items()}
+
     return char_to_idx, idx_to_char
